@@ -12,7 +12,7 @@ steps:
 - task: UsePythonVersion@0
   inputs:
     versionSpec: '$(python.version)'
-  displayNmae: 'Use Python $(python.version)'
+  displayName: 'Use Python $(python.version)'
 
 - script: |
     python CompareTwoLists.py
