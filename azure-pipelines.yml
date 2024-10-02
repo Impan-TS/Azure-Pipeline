@@ -1,0 +1,19 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+strategy:
+  matrix:
+    Python3.9.17:
+      python.version: '3.9'
+
+steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '$(python.version)'
+  displayNmae: 'Use Python $(python.version)'
+
+- script: |
+    python CompareTwoLists.py
+  displayName: 'Run Compare lists program'
